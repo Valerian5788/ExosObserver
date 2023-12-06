@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ExoObserver.Models
 {
-    internal class Clients
+    internal class Clients : IObserver
     {
         public string Name { get; set; }
 
