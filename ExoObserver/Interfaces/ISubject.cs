@@ -14,6 +14,8 @@ namespace ExoObserver.Interfaces
 
         // Méthode pour attacher un observateur (observer)
         public void Attach(IObserver observer);
+        //public void AdsAttach(IObserver observer);
+        //public void NewsAttach(IObserver observer);
 
         // Méthode pour détacher un observateur
         public void Detach(IObserver observer);
