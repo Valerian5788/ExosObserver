@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace ExoObserver.Models
 {
-    internal class Pub : IObserver
+    internal class Pub : ISubject
     {
-        public void Update(ISubject sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
         public string Name { get; set; }
         public Pub(string name)
         {
@@ -30,6 +26,14 @@ namespace ExoObserver.Models
             if (ObserversDelegate is not null)
             {
                 ObserversDelegate -= observer.Update;
+            }
+        }
+
+        public void Notify()
+        {
+            if (ObserversDelegate is not null)
+            {
+                ObserversDelegate.Invoke(this, new EventArgs());
             }
         }
     }

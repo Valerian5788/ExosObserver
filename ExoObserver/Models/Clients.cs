@@ -27,6 +27,13 @@ namespace ExoObserver.Models
             {
                 Console.WriteLine($"Client {Name}, à reçu un email envoyé par {magazine.Name}");
             }
+            else if (sender is Pub pub)
+            {
+                Console.WriteLine($"Client {Name}, à reçu un email envoyé par {pub.Name}");
+            } else
+            {
+                Console.WriteLine("Notifié par originie inconnue");
+            }
         }
     }
 }
